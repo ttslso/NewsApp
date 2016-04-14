@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyNewsApp.iml" filepath="$PROJECT_DIR$/MyNewsApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-async-http-1.4.8/android-async-http-1.4.8.iml" filepath="$PROJECT_DIR$/android-async-http-1.4.8/android-async-http-1.4.8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/universal-image-loader-1.9.5/universal-image-loader-1.9.5.iml" filepath="$PROJECT_DIR$/universal-image-loader-1.9.5/universal-image-loader-1.9.5.iml" />
+    </modules>
+  </component>
+</project>

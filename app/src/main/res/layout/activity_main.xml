@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:orientation="vertical"
+        tools:context=".activity.MainActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#32a6a0"
+            android:theme="@style/Widget.AppCompat.ActionBar">
+
+            <TextView
+                android:id="@+id/toolbar_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="新闻应用"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/radio_group"
+            android:layout_below="@+id/toolbar"></FrameLayout>
+
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:background="#32a6a0"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/news_radio_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#32a6a0"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_tab_news"
+                android:gravity="center"
+                android:text="阅读"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/video_radio_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#32a6a0"
+                android:button="@null"
+                android:drawableTop="@drawable/selector_tab_video"
+                android:gravity="center"
+                android:text="视频"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="10sp"
+                />
+
+
+            <RadioButton
+                android:id="@+id/pject_radio_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#32a6a0"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/selector_tab_project"
+                android:gravity="center"
+                android:text="专题"
+                android:textColor="@drawable/selector_tab_text_color"
+                android:textSize="10sp" />
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <fragment
+        android:id="@+id/menu_fragment"
+        android:name="myapplication.mynewsapp.fragment.MenuFragment"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left" />
+
+</android.support.v4.widget.DrawerLayout>
