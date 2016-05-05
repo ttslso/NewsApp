@@ -26,7 +26,9 @@ dependencies {
     compile 'com.android.support:design:22.2.1'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.loopj.android:android-async-http:1.4.8'
-    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.android.support:recyclerview-v7:22.1.1'
     compile project(':library')
     compile 'com.google.code.gson:gson:2.2.4'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.android.support:cardview-v7:22.0.+'
 }

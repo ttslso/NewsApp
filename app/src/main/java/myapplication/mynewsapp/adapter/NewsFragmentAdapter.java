@@ -33,6 +33,7 @@ public class NewsFragmentAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return list_fragment.size();
     }
+
     //可在tab前增加icon
     public CharSequence getPageTitle(int position){
         return list_title.get(position % list_title.size());

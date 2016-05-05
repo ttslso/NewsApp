@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-   android:id="@+id/tv_item"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="clip_vertical"
-    android:paddingBottom="10dp"
-    android:paddingLeft="15dp"
-    android:paddingTop="10dp"
-    android:text="条目"
-    android:textColor="#FF000000"
-    android:textSize="16dp"
-    >
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</TextView>
+    <TextView
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:drawablePadding="18dp"
+        android:background="@drawable/recycler_bd"
+        android:gravity="center_vertical"
+        android:text="test"
+        android:textSize="16sp" />
+
+</RelativeLayout>

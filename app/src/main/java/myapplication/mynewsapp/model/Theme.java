@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by ttslso on 2016/4/3.
  */
-public class Theme  {
+public class Theme {
 
     /**
      * stories : [{"images":["http://pic1.zhimg.com/84dadf360399e0de406c133153fc4ab8_t.jpg"],"type":0,"id":4239728,"title":"前苏联监狱纹身百科图鉴"},"..."]
@@ -33,7 +33,7 @@ public class Theme  {
      * title : 前苏联监狱纹身百科图鉴
      */
 
-    private List<StoriesEntity> stories;
+    private List<StoriesBean> stories;
     /**
      * url : http://www.zhihu.com/people/wezeit
      * bio : 微在 Wezeit 主编
@@ -42,7 +42,7 @@ public class Theme  {
      * name : 益康糯米
      */
 
-    private List<EditorsEntity> editors;
+    private List<EditorsBean> editors;
 
     public static Theme objectFromData(String str) {
 
@@ -97,76 +97,32 @@ public class Theme  {
         this.image_source = image_source;
     }
 
-    public List<StoriesEntity> getStories() {
+    public List<StoriesBean> getStories() {
         return stories;
     }
 
-    public void setStories(List<StoriesEntity> stories) {
+    public void setStories(List<StoriesBean> stories) {
         this.stories = stories;
     }
 
-    public List<EditorsEntity> getEditors() {
+    public List<EditorsBean> getEditors() {
         return editors;
     }
 
-    public void setEditors(List<EditorsEntity> editors) {
+    public void setEditors(List<EditorsBean> editors) {
         this.editors = editors;
     }
 
-/*    public static class StoriesEntity {
-        private int type;
-        private int id;
-        private String title;
-        private List<String> images;
-
-        public static StoriesEntity objectFromData(String str) {
-
-            return new Gson().fromJson(str, StoriesEntity.class);
-        }
-
-        public int getType() {
-            return type;
-        }
-
-        public void setType(int type) {
-            this.type = type;
-        }
-
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-
-        public void setTitle(String title) {
-            this.title = title;
-        }
-
-        public List<String> getImages() {
-            return images;
-        }
-
-        public void setImages(List<String> images) {
-            this.images = images;
-        }
-    }*/
-
-    public static class EditorsEntity {
+    public static class EditorsBean {
         private String url;
         private String bio;
         private int id;
         private String avatar;
         private String name;
 
-        public static EditorsEntity objectFromData(String str) {
+        public static EditorsBean objectFromData(String str) {
 
-            return new Gson().fromJson(str, EditorsEntity.class);
+            return new Gson().fromJson(str, EditorsBean.class);
         }
 
         public String getUrl() {

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/sky_bg"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_iv"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/tx_user" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/user_iv"
+            android:layout_alignLeft="@+id/user_iv"
+            android:layout_alignRight="@+id/user_iv"
+            android:layout_alignStart="@+id/user_iv"
+            android:layout_below="@+id/user_iv"
+            android:text="立即登录"
+            android:textAlignment="center"
+            android:textColor="#282e27"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/setting_icon"
+            android:text="设置"
+            android:textColor="#282e27"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"></android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ebebeb" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="夜间模式"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="切换主题"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

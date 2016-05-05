@@ -21,7 +21,7 @@ public class Before  {
      * id : 1747159
      */
 
-    private List<StoriesEntity> stories;
+    private List<StoriesBean> stories;
 
     public String getDate() {
         return date;
@@ -31,15 +31,15 @@ public class Before  {
         this.date = date;
     }
 
-    public List<StoriesEntity> getStories() {
+    public List<StoriesBean> getStories() {
         return stories;
     }
 
-    public void setStories(List<StoriesEntity> stories) {
+    public void setStories(List<StoriesBean> stories) {
         this.stories = stories;
     }
 
-    /*public static class StoriesEntity {
+    /*public static class StoriesBean {
         private String title;
         private String ga_prefix;
         private int type;

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import myapplication.mynewsapp.R;
-import myapplication.mynewsapp.model.Latest;
+import myapplication.mynewsapp.model.TopStoriesBean;
 
 
 /**
@@ -34,7 +34,7 @@ import myapplication.mynewsapp.model.Latest;
  */
 public class ScrollView extends FrameLayout implements OnClickListener {
 
-    private List<Latest.TopStoriesEntity> topStoriesEntities;
+    private List<TopStoriesBean> topStoriesBeans;
     private ImageLoader mImageLoader;
     private List<View> views;
     private Context context;
@@ -51,7 +51,7 @@ public class ScrollView extends FrameLayout implements OnClickListener {
     public ScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.context = context;
-        this.topStoriesEntities = new ArrayList<>();
+        this.topStoriesBeans = new ArrayList<>();
         initImageLoader(context);
         initView();
     }
@@ -70,8 +70,8 @@ public class ScrollView extends FrameLayout implements OnClickListener {
         delayTime = 2000;
     }
 
-    public void setTopEntities(List<Latest.TopStoriesEntity> topEntities) {
-        this.topStoriesEntities = topEntities;
+    public void setTopBeans(List<TopStoriesBean> topBeans) {
+        this.topStoriesBeans = topBeans;
         reset();
     }
 
@@ -89,7 +89,7 @@ public class ScrollView extends FrameLayout implements OnClickListener {
 
 
 
-        int len = topStoriesEntities.size();
+        int len = topStoriesBeans.size();
         for (int i = 0; i < len; i++) {
             ImageView iv_dot = new ImageView(context);
             //Layout的信息包，封装包内的高，宽设置
@@ -110,14 +110,14 @@ public class ScrollView extends FrameLayout implements OnClickListener {
             TextView tv_title = (TextView) fm.findViewById(R.id.tv_title_s);
             iv.setScaleType(ImageView.ScaleType.CENTER_CROP);
             if (i == 0) {
-                mImageLoader.displayImage(topStoriesEntities.get(len - 1).getImage(),iv,options);
-                tv_title.setText(topStoriesEntities.get(len - 1).getTitle());
+                mImageLoader.displayImage(topStoriesBeans.get(len - 1).getImage(),iv,options);
+                tv_title.setText(topStoriesBeans.get(len - 1).getTitle());
             } else if (i == len + 1) {
-                mImageLoader.displayImage(topStoriesEntities.get(0).getImage(), iv,options);
-                tv_title.setText(topStoriesEntities.get(0).getTitle());
+                mImageLoader.displayImage(topStoriesBeans.get(0).getImage(), iv,options);
+                tv_title.setText(topStoriesBeans.get(0).getTitle());
             } else {
-                mImageLoader.displayImage(topStoriesEntities.get(i - 1).getImage(), iv,options);
-                tv_title.setText(topStoriesEntities.get(i - 1).getTitle());
+                mImageLoader.displayImage(topStoriesBeans.get(i - 1).getImage(), iv,options);
+                tv_title.setText(topStoriesBeans.get(i - 1).getTitle());
             }
             fm.setOnClickListener(this);
             views.add(fm);
@@ -141,7 +141,7 @@ public class ScrollView extends FrameLayout implements OnClickListener {
         @Override
         public void run() {
             if (isAutoPlay) {
-                currentItem = currentItem % (topStoriesEntities.size() + 1) + 1;
+                currentItem = currentItem % (topStoriesBeans.size() + 1) + 1;
                 if (currentItem == 1) {
                     vp.setCurrentItem(currentItem, false);
                     handler.post(task);
@@ -193,8 +193,8 @@ public class ScrollView extends FrameLayout implements OnClickListener {
                     break;
                 case 0:
                     if (vp.getCurrentItem() == 0) {
-                        vp.setCurrentItem(topStoriesEntities.size(), false);
-                    } else if (vp.getCurrentItem() == topStoriesEntities.size() + 1) {
+                        vp.setCurrentItem(topStoriesBeans.size(), false);
+                    } else if (vp.getCurrentItem() == topStoriesBeans.size() + 1) {
                         vp.setCurrentItem(1, false);
                     }
                     currentItem = vp.getCurrentItem();
@@ -227,14 +227,14 @@ public class ScrollView extends FrameLayout implements OnClickListener {
     }
 
     public interface OnItemClickListener {
-        public void click(View v,Latest.TopStoriesEntity entity);
+        void click(View v,TopStoriesBean bean);
     }
 
     @Override
     public void onClick(View v) {
         if (mItemClickListener != null) {
-            Latest.TopStoriesEntity entity = topStoriesEntities.get(vp.getCurrentItem() - 1);
-            mItemClickListener.click(v,entity);
+            TopStoriesBean bean = topStoriesBeans.get(vp.getCurrentItem() - 1);
+            mItemClickListener.click(v,bean);
         }
     }
 

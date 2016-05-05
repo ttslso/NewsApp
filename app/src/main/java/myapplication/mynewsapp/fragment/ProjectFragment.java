@@ -11,7 +11,7 @@ import myapplication.mynewsapp.R;
 /**
  * Created by ttslso on 2016/4/8.
  */
-public class ThirdFragment extends Fragment {
+public class ProjectFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle saveInstanceState){
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.thrid_fragment,null);
         return view;

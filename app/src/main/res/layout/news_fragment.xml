@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#eeeeee"
     android:orientation="vertical"
-    tools:context=".fragment.FirstFragment">
+    tools:context=".fragment.NewsFragment">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/page_tab_layout"
@@ -20,6 +20,3 @@
             android:background="#ffffff" />
 
 </LinearLayout>
-
-
-    <!--<FrameLayout--><!--android:id="@+id/fl_content"--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"/>-->

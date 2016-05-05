@@ -19,21 +19,18 @@ import myapplication.mynewsapp.adapter.NewsFragmentAdapter;
 /**
  * Created by ttslso on 2016/3/16.
  */
-public class FirstFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
     private ViewPager mViewPager; //仿网易滑动page
     private TabLayout mTabLayout;//Tab导航栏
-    private int curId;
     private NewsFragmentAdapter mNewsFragmentAdapter;
 
     private List<Fragment> list_fragment;
     private List<String>   list_title;
 
-    //private Toolbar mToolbar;//工具条
-    //private DrawerLayout mDrawerLayout;//侧滑菜单
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle saveInstanceState) {
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.first_fragment,null);
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.news_fragment,null);
         mTabLayout = (TabLayout) view.findViewById(R.id.page_tab_layout);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mViewPager = (ViewPager) view.findViewById(R.id.main_view_pager);
@@ -44,11 +41,11 @@ public class FirstFragment extends Fragment {
     public void fragmentChange(){
         list_fragment = new ArrayList<>();
 
-        MainFragment mFragment = new MainFragment();
-        ThemeFragment sFragment = new ThemeFragment(11);
-        ThemeFragment tFragment = new ThemeFragment(10);
-        ThemeFragment fFragment = new ThemeFragment(9);
-        ThemeFragment vFragment = new ThemeFragment(8);
+        MainNewsFragment mFragment = new MainNewsFragment();
+        ThemeFragment sFragment = new ThemeFragment().newInstance(11);
+        ThemeFragment tFragment = new ThemeFragment().newInstance(10);
+        ThemeFragment fFragment = new ThemeFragment().newInstance(9);
+        ThemeFragment vFragment = new ThemeFragment().newInstance(8);//体育日报部分API存在问题
 
         list_fragment.add(mFragment);
         list_fragment.add(sFragment);

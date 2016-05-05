@@ -6,15 +6,11 @@ package myapplication.mynewsapp.util;
  */
 public class Constant {
     public static final String BASEURL="http://news-at.zhihu.com/api/4/";
-    public static final String START="start-image/1080*1776";
+    public static final String START="http://news-at.zhihu.com/api/4/start-image/1080*1776";
     public static final String THEMES="themes";
-    public static final String LATESTNEWS="news/latest";
-    public static final String BEFORE="news/before/";
-    public static final String THEMENEWS="theme/";
-    public static final String CONTENT="news/";
-    public static final int TOPIC=131;
+    public static final String LATESTNEWS="http://news-at.zhihu.com/api/4/news/latest";
+    public static final String BEFORE="http://news-at.zhihu.com/api/4/news/before/";
+    public static final String THEMENEWS="http://news-at.zhihu.com/api/4/theme/";
+    public static final String CONTENT="http://news-at.zhihu.com/api/4/news/";
     public static final String START_LOCATION="start_location";
-    public static final String CACHE="cache";
-    public static final int LATEST_COLUMN=Integer.MAX_VALUE;
-    public static final int BASE_COLUMN=100000000;
 }
