@@ -1,6 +1,7 @@
 package myapplication.mynewsapp.fragment;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -22,9 +23,11 @@ import com.google.gson.Gson;
 
 import java.util.List;
 
-import myapplication.mynewsapp.Request.MyStringRequest;
+import myapplication.mynewsapp.db.ListDBHelper;
+import myapplication.mynewsapp.util.NetworkConn;
 import myapplication.mynewsapp.R;
-import myapplication.mynewsapp.activity.NewsContentActivity;
+import myapplication.mynewsapp.request.MyStringRequest;
+import myapplication.mynewsapp.activity.NewsActivity;
 import myapplication.mynewsapp.adapter.NewsListAdapter;
 import myapplication.mynewsapp.model.Before;
 import myapplication.mynewsapp.model.Latest;
@@ -39,6 +42,7 @@ import myapplication.mynewsapp.view.VpSwipeRefreshLayout;
  */
 public class MainNewsFragment extends Fragment {
 
+    public static final int VALUE = 1;//数据库的value值
     private ListView lv_news;
     private ScrollView mScrollView;
     private Handler handler = new Handler();
@@ -47,10 +51,11 @@ public class MainNewsFragment extends Fragment {
     private Boolean isLoading = false;
     //重写swiperefreshlayout中的触摸拦截事件
     //修复viewpager和swiperefreshlayout的冲突
-    private VpSwipeRefreshLayout sr;
+    private VpSwipeRefreshLayout sr;//添加触摸拦截事件的下拉刷新
     private RequestQueue mQueue;
     private Gson gson;
     private Before before;
+    private ListDBHelper dbHelper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container
@@ -58,6 +63,8 @@ public class MainNewsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.main_news_layout, container, false);
         lv_news = (ListView) view.findViewById(R.id.lv_news);
+
+        dbHelper = new ListDBHelper(getActivity());
 
         //SwipeRefresh刷新控件
         //下拉刷新成功时重新载入fragment
@@ -97,7 +104,7 @@ public class MainNewsFragment extends Fragment {
                 StoriesBean storiesBean = new StoriesBean();
                 storiesBean.setId(topBean.getId());
                 storiesBean.setTitle(topBean.getTitle());
-                Intent intent = new Intent(getActivity(), NewsContentActivity.class);
+                Intent intent = new Intent(getActivity(), NewsActivity.class);
                 intent.putExtra(Constant.START_LOCATION, startLocation);
                 intent.putExtra("bean", storiesBean);
                 startActivity(intent);
@@ -115,7 +122,7 @@ public class MainNewsFragment extends Fragment {
                 view.getLocationOnScreen(startLocation);
                 startLocation[0] += view.getWidth()/2;
                 StoriesBean bean = (StoriesBean) parent.getAdapter().getItem(position);
-                Intent intent = new Intent(getActivity(),NewsContentActivity.class);
+                Intent intent = new Intent(getActivity(),NewsActivity.class);
                 intent.putExtra(Constant.START_LOCATION,startLocation);
                 intent.putExtra("bean",bean);
                 startActivity(intent);
@@ -142,7 +149,6 @@ public class MainNewsFragment extends Fragment {
                 }
             }
         });
-
         return view;
     }
 
@@ -151,54 +157,22 @@ public class MainNewsFragment extends Fragment {
         getData();
     }
 
+    //添加缓存，当网络连接时候替换数据库中的url，未连接网络使用数据库之前存储的url
     protected void getData() {
-        isLoading = true;
-        mQueue = Volley.newRequestQueue(this.getActivity());
-        MyStringRequest request = new MyStringRequest(Constant.LATESTNEWS, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.d("TAG_latest", response);
-                gson = new Gson();
-                //对象为数组 需要response,new TypeToken..
-                final Latest latest = gson.fromJson(response, Latest.class);
-                date = latest.getDate();
-                Log.d("TAG", latest.getDate());
-
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        List<StoriesBean> beans = latest.getStories();
-                        List<TopStoriesBean> topBeans = latest.getTop_stories();
-                        mScrollView.setTopBeans(topBeans);
-
-                        mAdapter.addTitle(beans);
-                        for (int i = 0; i < beans.size(); i++) {
-                            Log.d("TAG", beans.get(i).getTitle());
-                            List<String> images = beans.get(i).getImages();
-                            mAdapter.addImage(images);
-                        }
-                        isLoading = false;
-                        sr.setRefreshing(false);
-                    }
-                });
-
-            }
-        },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("TAG", error.getMessage(), error);
-                        Toast.makeText(getActivity(), "未能加载数据", Toast.LENGTH_SHORT).show();
-                    }
-                });
-        mQueue.add(request);
-
+        if(NetworkConn.isConnected(getActivity())){
+            String url = Constant.LATESTNEWS;
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            db.close();
+            parseLatest(url);
+        }else{
+            Toast.makeText(getActivity(), "未连接网络", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void onDestroy() {
         super.onDestroy();
     }
-
+    //上拉加载更多
     protected void loadMore(final String url) {
         isLoading = true;
         mQueue = Volley.newRequestQueue(getActivity());
@@ -235,8 +209,50 @@ public class MainNewsFragment extends Fragment {
             }
         });
         mQueue.add(request);
+    }
+    //解析json
+    public void parseLatest(String url){
+        isLoading = true;
+        mQueue = Volley.newRequestQueue(this.getActivity());
+        MyStringRequest request = new MyStringRequest(url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.d("TAG_latest", response);
+                gson = new Gson();
+                //对象为数组 需要response,new TypeToken..
+                final Latest latest = gson.fromJson(response, Latest.class);
+                date = latest.getDate();
+                Log.d("TAG", latest.getDate());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        List<StoriesBean> beans = latest.getStories();
+                        List<TopStoriesBean> topBeans = latest.getTop_stories();
+                        mScrollView.setTopBeans(topBeans);
+                        mAdapter.addTitle(beans);
+                        for (int i = 0; i < beans.size(); i++) {
+                            Log.d("TAG", beans.get(i).getTitle());
+                            List<String> images = beans.get(i).getImages();
+                            mAdapter.addImage(images);
+                        }
+                        isLoading = false;
+                        sr.setRefreshing(false);
+                    }
+                });
+
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("TAG", error.getMessage(), error);
+                        Toast.makeText(getActivity(), "未能加载数据", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        mQueue.add(request);
 
     }
+
 }
 
 

@@ -119,7 +119,6 @@
     <orderEntry type="library" exported="" name="universal-image-loader-1.9.5-sources" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="android-async-http-1.4.8" level="project" />
-    <orderEntry type="library" exported="" name="1_android-async-http-1.4.8" level="project" />
     <orderEntry type="library" exported="" name="design-22.2.1" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-22.0.0" level="project" />
     <orderEntry type="module" module-name="library" exported="" />

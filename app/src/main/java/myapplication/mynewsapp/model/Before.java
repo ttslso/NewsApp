@@ -15,7 +15,7 @@ public class Before  {
     private String date;
     /**
      * title : 深夜食堂 · 我的张曼妮
-     * ga_prefix : 111822
+     * ga_prefix : 1118
      * images : ["http://p4.zhimg.com/7b/c8/7bc8ef5947b069513c51e4b9521b5c82.jpg"]
      * type : 0
      * id : 1747159

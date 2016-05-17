@@ -2,7 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_vertical">
+    android:layout_gravity="center_vertical"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:background="@android:color/black">
 
     <ImageView
         android:id="@+id/image_start"
@@ -11,5 +14,20 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         />
+
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:text="跳过"
+        android:textSize="16sp"
+        android:background="#00000000"
+        android:textColor="@color/grey"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp" />
 
 </RelativeLayout>

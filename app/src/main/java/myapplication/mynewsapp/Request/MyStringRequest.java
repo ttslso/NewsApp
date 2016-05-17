@@ -1,4 +1,4 @@
-package myapplication.mynewsapp.Request;
+package myapplication.mynewsapp.request;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.Response;

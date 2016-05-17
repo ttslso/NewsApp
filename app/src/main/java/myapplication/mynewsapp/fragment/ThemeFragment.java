@@ -26,9 +26,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-import myapplication.mynewsapp.Request.MyStringRequest;
 import myapplication.mynewsapp.R;
-import myapplication.mynewsapp.activity.NewsContentActivity;
+import myapplication.mynewsapp.request.MyStringRequest;
+import myapplication.mynewsapp.activity.NewsActivity;
 import myapplication.mynewsapp.adapter.ThemeNewsItemAdapter;
 import myapplication.mynewsapp.model.StoriesBean;
 import myapplication.mynewsapp.model.Theme;
@@ -112,7 +112,7 @@ public class ThemeFragment extends Fragment {
                 startLocation[0] += view.getWidth()/2;
 
                 StoriesBean bean = (StoriesBean) parent.getAdapter().getItem(position);
-                Intent intent = new Intent(getActivity(),NewsContentActivity.class);
+                Intent intent = new Intent(getActivity(),NewsActivity.class);
                 intent.putExtra(Constant.START_LOCATION,startLocation);
                 intent.putExtra("bean",bean);
                 startActivity(intent);

@@ -54,7 +54,6 @@ public class RevealBackgroundView extends View {
     public void init(){
         fillPaint = new Paint();
         fillPaint.setStyle(Paint.Style.FILL);
-        //fillPaint.setColor(Color.WHITE);
         fillPaint.setColor(Color.BLACK);
     }
 
