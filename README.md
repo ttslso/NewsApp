@@ -2,8 +2,8 @@
         此app作为新闻客户端类应用的练习
         以知乎日报和网易新闻客户端作为参考进行仿照
     
-        内容调用了知乎日报的API
-        [知乎日报api](https://github.com/izzyleung/ZhihuDailyPurify/wiki/知乎日报-API-分析)
+        内容调用了知乎日报的API <br> 
+[知乎日报api](https://github.com/izzyleung/ZhihuDailyPurify/wiki/知乎日报-API-分析)
     
     
 ##完成功能
@@ -31,9 +31,9 @@
         compile 'de.hdodenhof:circleimageview:2.0.0'
     
 ##截图
-        ![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png?raw=true)
-        ![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/2.png?raw=true)
-        ![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/3.png?raw=true)
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png?raw=true) <br> 
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/2.png?raw=true) <br> 
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/3.png?raw=true)
     
     
     
