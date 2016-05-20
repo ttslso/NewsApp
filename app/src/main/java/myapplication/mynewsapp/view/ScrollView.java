@@ -48,14 +48,6 @@ public class ScrollView extends FrameLayout implements OnClickListener {
     private OnItemClickListener mItemClickListener;
     private DisplayImageOptions options;
 
-    public ScrollView(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        this.context = context;
-        this.topStoriesBeans = new ArrayList<>();
-        initImageLoader(context);
-        initView();
-    }
-
     public ScrollView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
@@ -63,8 +55,17 @@ public class ScrollView extends FrameLayout implements OnClickListener {
     public ScrollView(Context context) {
         this(context, null);
     }
-
-    private void initView() {
+    /**
+     * scroll images and titles as header of listview
+     * @param context
+     * @param attrs
+     * @param defStyle
+     */
+    public ScrollView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        this.context = context;
+        this.topStoriesBeans = new ArrayList<>();
+        initImageLoader(context);
         views = new ArrayList<View>();
         iv_dots = new ArrayList<ImageView>();
         delayTime = 2000;
@@ -86,13 +87,10 @@ public class ScrollView extends FrameLayout implements OnClickListener {
         vp = (ViewPager) view.findViewById(R.id.vp);
         ll_dot = (LinearLayout) view.findViewById(R.id.ll_dot);
         ll_dot.removeAllViews();
-
-
-
         int len = topStoriesBeans.size();
         for (int i = 0; i < len; i++) {
             ImageView iv_dot = new ImageView(context);
-            //Layout的信息包，封装包内的高，宽设置
+            //Layout属性，变更高，宽,间距设置
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -132,12 +130,10 @@ public class ScrollView extends FrameLayout implements OnClickListener {
 
     private void startPlay() {
         isAutoPlay = true;
-        handler.postDelayed(task, 3000);
+        handler.postDelayed(task, 4000);
     }
 
-
     private final Runnable task = new Runnable() {
-
         @Override
         public void run() {
             if (isAutoPlay) {
@@ -225,7 +221,7 @@ public class ScrollView extends FrameLayout implements OnClickListener {
     public void setOnItemClickListener(OnItemClickListener mItemClickListener) {
         this.mItemClickListener = mItemClickListener;
     }
-
+    //item点击事件接口
     public interface OnItemClickListener {
         void click(View v,TopStoriesBean bean);
     }

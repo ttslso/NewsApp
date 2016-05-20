@@ -68,9 +68,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             Toast.makeText(getActivity(), "API版本过低", Toast.LENGTH_SHORT).show();
         }
     }
+
     @Override
     public void onClick(View v) {
-
     }
 }
 

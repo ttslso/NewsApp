@@ -44,8 +44,9 @@ public class ImageActivity extends Activity {
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);  //必须放在setContent之前
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.image_activtiy);
+
         //隐藏系统状态栏
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
@@ -72,7 +73,7 @@ public class ImageActivity extends Activity {
     public void initImage(){
         final File imageFile = new File( getFilesDir(), "start.jpg");
         if (imageFile.exists()) {
-            //bm return null,可能url存在问题，尝试使用解析数据流方式
+            //bm return null,可能url存在问题，使用解析数据流方式更替
             Bitmap bm = BitmapFactory.decodeFile(imageFile.getAbsolutePath());
             if (bm != null){
                 mImageView.setImageBitmap(bm);
@@ -134,6 +135,7 @@ public class ImageActivity extends Activity {
         finish();
     }
 
+    //image成功存储但是通过bitmap工厂返回为null
     private void saveImage(File file, byte[] bytes) {
         try {
             if (file.exists()) {

@@ -15,7 +15,7 @@ import android.view.animation.Interpolator;
 /**
  * Created by ttslso on 2016/3/29.
  */
-//自定义点击事件动画
+//自定义点击item跳转动画
 public class RevealBackgroundView extends View {
 
     public static final int STATE_NOT_STARTED = 0;//未开始

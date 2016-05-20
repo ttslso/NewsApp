@@ -158,6 +158,7 @@ public class MainNewsFragment extends Fragment {
     }
 
     //添加缓存，当网络连接时候替换数据库中的url，未连接网络使用数据库之前存储的url
+    //不能使用经过请求后的gson相应对象，此处数据存储功能需要更替
     protected void getData() {
         if(NetworkConn.isConnected(getActivity())){
             String url = Constant.LATESTNEWS;

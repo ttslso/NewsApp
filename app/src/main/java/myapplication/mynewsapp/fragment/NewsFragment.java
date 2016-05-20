@@ -45,7 +45,7 @@ public class NewsFragment extends Fragment {
         ThemeFragment sFragment = new ThemeFragment().newInstance(11);
         ThemeFragment tFragment = new ThemeFragment().newInstance(10);
         ThemeFragment fFragment = new ThemeFragment().newInstance(9);
-        ThemeFragment vFragment = new ThemeFragment().newInstance(8);//体育日报部分API存在问题
+        ThemeFragment vFragment = new ThemeFragment().newInstance(8);
 
         list_fragment.add(mFragment);
         list_fragment.add(sFragment);

@@ -13,6 +13,13 @@ import myapplication.mynewsapp.R;
  */
 public class VideoFragment extends Fragment {
 
+    /**
+     * 视频fragment 未添加内容
+     * @param inflater
+     * @param container
+     * @param saveInstanceState
+     * @return
+     */
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle saveInstanceState){
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.second_fragment,null);
         return view;
