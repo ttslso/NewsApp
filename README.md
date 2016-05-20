@@ -30,11 +30,8 @@
     compile 'de.hdodenhof:circleimageview:2.0.0'
     
 ##截图
-    ![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png?raw=true)
-    ![image]{(http://i4.buimg.com/90a7939384eebf7b.png)}
-    ![image](http://i4.buimg.com/6ecea0d258a1d325.png)
-    ![image]{(https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png)}
-    ![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png)
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png?raw=true)
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png)
     
     
     
