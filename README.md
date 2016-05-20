@@ -14,10 +14,10 @@
     顶部tab页加载其他主题内容
     底部按键更换当前主页内容（内容部分将会后续添加）
     文章内容展示（使用WebView）
+    文章内容的离线缓存
     
     后续陆续添加
-    内容列表和文章的缓存
-    离线下载
+    内容列表的缓存
     收藏功能
     
 ##添加的依赖
@@ -30,8 +30,8 @@
     compile 'de.hdodenhof:circleimageview:2.0.0'
     
 ##截图
-
-    
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png?raw=true)
+![image](https://github.com/ttslso/NewsApp/blob/master/screenshot/1.png)
     
     
     
