@@ -16,6 +16,11 @@ public class MyStringRequest extends StringRequest {
         super( url, listener, errorListener);
     }
 
+    /**
+     * 之前解析为乱码 重写方法 使用utf-8进行转码
+     * @param response
+     * @return
+     */
     @Override
     protected Response<String> parseNetworkResponse(NetworkResponse response) {
         String str = null;
