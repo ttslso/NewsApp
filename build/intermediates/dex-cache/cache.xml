@@ -2,74 +2,25 @@
 <items version="2" >
 
     <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\libs\universal-image-loader-1.9.5.jar"
-        jumboMode="false"
+        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         revision="23.0.2"
-        sha1="442dbfb517b9ab5cb5c6da7ebf8cc28ec5bd0375">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.5_bd1dda42d2e9ab7f417a539321b526e82baf14fa.jar" />
+        sha1="de3ddbf57c10f47dffd7762b2264be505b1fda0b">
+        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7013e1054df453ce308f9f04a86360594a36f2c3\classes.dex" />
     </item>
     <item
-        jar="D:\tools\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_359f0d7ea71591a272aef0806d32895f29ad1043.jar" />
-    </item>
-    <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\MyNewsApp\library\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6cdb0c8ebcaa177289699fc9fbe52f96e99a733e">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\MyNewsApp-library-unspecified_416c5be90e9876a4623e4addf6bc259dd51f090e.jar" />
-    </item>
-    <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_1921cf5e7034ba5c9c556121443c579f6e66d391.jar" />
-    </item>
-    <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.1_fab695b93593e6e278083193aacc024f10363918.jar" />
-    </item>
-    <item
-        jar="C:\Users\ttslso\.gradle\caches\modules-2\files-2.1\com.loopj.android\android-async-http\1.4.8\77bbfe240e437ecb396d982afa0d3bd4f9090ba7\android-async-http-1.4.8.jar"
+        jar="D:\AndroidStudioProjects\MyNewsApp\app\libs\android-async-http-1.4.8.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="77bbfe240e437ecb396d982afa0d3bd4f9090ba7">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.8_bcb0fbe63e9e09887d671a72bcf308c35c3aaaea.jar" />
+        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.8_60cdcbf82833de176d87385a5df00e045b94fc92.jar" />
     </item>
     <item
-        jar="C:\Users\ttslso\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.4\a60a5e993c98c864010053cb901b7eab25306568\gson-2.2.4.jar"
+        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.1.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\gson-2.2.4_99ed40bf3fa4618ee94e823bdcc635a7211dc6ed.jar" />
-    </item>
-    <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_882a32bb77e45f9b7f2ffce7b0d3a3723c582edc.jar" />
-    </item>
-    <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\com.android.support\design\22.2.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="1821601ddbec5ff125653097812823388700af74">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\com.android.support-design-22.2.1_7f48029c2309df0c5b521e51f833014c357ed6df.jar" />
-    </item>
-    <item
-        jar="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_db3ca6acffaa45c6894b80a9ab991c7b1c843124.jar" />
+        sha1="e0b0c35d02308b270015a74cada4887e2e49b889">
+        <dex dex="D:\AndroidStudioProjects\MyNewsApp\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-22.1.1_9baa00bf40b0279aed955c1add211b382ebb6afc.jar" />
     </item>
 
 </items>
